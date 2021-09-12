@@ -18,7 +18,7 @@ body {
   border-radius: 5px;
   margin: auto;
   margin-top: 50px;
-  border-right: none;
+  /* border-right: none; */
 }
 .search-button {
   padding: 10px 50px;
