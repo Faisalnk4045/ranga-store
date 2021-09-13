@@ -17,10 +17,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 
-<body class="mb-5 container">
-  <header></header>
+<body class="my-5 container">
+  <header>
+    <div class="input-group mb-5 w-50 mx-auto shadow">
+      <input id="input-field" type="text" class="form-control" placeholder="Type to search..."
+        aria-label="Product search input field" aria-describedby="button-addon2">
+      <button onclick="loadProducts()" class="btn bg-secondary btn-outline-secondary text-white" type="button"
+        id="search-btn">Search</button>
+    </div>
+  </header>
   <main class="main">
-    
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -38,15 +45,6 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="search-field">
-      <div class="search-box">
-        <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
-          Search
-        </button>
       </div>
     </div>
     
