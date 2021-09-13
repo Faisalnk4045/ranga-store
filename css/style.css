@@ -3,6 +3,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+/* product card styles */
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -28,6 +29,7 @@ body {
   height: 150px;
 }
 
+/* product cart styles */
 .cart {
   width: 350px;
   padding: 10px;
@@ -38,6 +40,7 @@ body {
   padding-right: 30px;
 }
 
+/* styles for medium screen devices */
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
@@ -56,6 +59,7 @@ body {
   }
 }
 
+/* styles for small screen devices */
 @media only screen and (max-width: 468px) {
   #all-products {
     display: grid;

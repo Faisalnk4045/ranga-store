@@ -15,29 +15,30 @@ const showProducts = (products) => {
 		const div = document.createElement("div");
 		div.classList.add("product");
 		div.innerHTML = `
-      <div class="card border rounded-3 border-secondary single-product">
-        <div>
-          <img class="product-image" src=${image}></img>
-        </div>
+		<div class="card border rounded-3 border-secondary single-product">
+			<div>
+				<img class="product-image" src=${image}></img>
+			</div>
 
-        <div class="card-body">
-          <h5>${product.title}</h5>
-        </div>
-      
-        <div class="card-footer border-top-0 bg-white">
-          <p class="text-muted">Category: ${product.category}</p>
-          <small class="text-muted pe-3">Reviews: ${product.rating.count}</small>
-          <small class="text-muted">Rating: ${product.rating.rate}</small>
-          <h5>Price: $${product.price}</h5>
-          <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success mt-3">add to cart</button>
-          <button onclick="getProductDetails(${product.id})" id="details-btn" class="btn btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-        </div>
-      </div>
+			<div class="card-body">
+				<h5>${product.title}</h5>
+			</div>
+		
+			<div class="card-footer border-top-0 bg-white">
+				<p class="text-muted">Category: ${product.category}</p>
+				<small class="text-muted pe-3">Reviews: ${product.rating.count}</small>
+				<small class="text-muted">Rating: ${product.rating.rate}</small>
+				<h5>Price: $${product.price}</h5>
+				<button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success mt-3">add to cart</button>
+				<button onclick="getProductDetails(${product.id})" id="details-btn" class="btn btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+			</div>
+		</div>
       `;
 		document.getElementById("all-products").appendChild(div);
 	}
 };
 
+// get single product details by id
 const getProductDetails = (id) => {
 	const url = `https://fakestoreapi.com/products/${id}`;
 	fetch(url)
@@ -45,6 +46,7 @@ const getProductDetails = (id) => {
 		.then(data => showProductDetails(data))
 }
 
+// show single product details
 const showProductDetails = (product) => {
 	const title = product.title;
 	const category = product.category;
@@ -58,25 +60,29 @@ const showProductDetails = (product) => {
 	const div = document.createElement('div');
 	div.classList.add('card-body');
 	div.innerHTML = `
-  <h5 class="card-title">${title}</h5>
-  <p class="card-text">Category: ${category}</p>
-  <p class="card-text">Price: $${price}</p>
-  <p class="card-text">Reviews: ${totalReview}</p>
-  <p class="card-text">Rating: ${rating}</p>
-  <p class="card-text">${description}</p>
-  `;
+		<h5 class="card-title">${title}</h5>
+		<p class="card-text">Category: ${category}</p>
+		<p class="card-text">Price: $${price}</p>
+		<p class="card-text">Reviews: ${totalReview}</p>
+		<p class="card-text">Rating: ${rating}</p>
+		<p class="card-text">${description}</p>
+  	`;
 	element.appendChild(div);
 }
+
+// add product to cart
 let count = 0;
 const addToCart = (id, price) => {
 	count = count + 1;
-	updatePrice("price", price);
 
+	updatePrice("price", price);
 	updateTaxAndCharge();
 	updateTotal();
+
 	document.getElementById("total-Products").innerText = count;
 };
 
+// get current amounts from cart
 const getInputValue = (id) => {
 	const element = document.getElementById(id).innerText;
 	const converted = parseFloat(element);
@@ -91,7 +97,7 @@ const updatePrice = (id, value) => {
 	document.getElementById(id).innerText = total.toFixed(2);
 };
 
-// set innerText function
+// set innerText function for updating cart
 const setInnerText = (id, value) => {
 	document.getElementById(id).innerText = value.toFixed(2);
 };
