@@ -2,115 +2,116 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FakeStore</title>
-  <link rel="stylesheet" href="./css/style.css" />
-  <!-- Latest compiled and minified CSS-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>FakeStore</title>
+	<link rel="stylesheet" href="./css/style.css" />
+	<!-- Latest compiled and minified CSS-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <!-- google Montserrat  font  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+	<!-- google Montserrat  font  -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 
 <body class="my-5 container">
-  <header>
-    <div class="input-group mb-5 w-50 mx-auto shadow">
-      <input id="input-field" type="text" class="form-control" placeholder="Type to search..."
-        aria-label="Product search input field" aria-describedby="button-addon2">
-      <button onclick="loadProducts()" class="btn bg-secondary btn-outline-secondary text-white" type="button"
-        id="search-btn">Search</button>
-    </div>
-  </header>
-  <main class="main">
+	<header>
+		<div class="input-group mb-5 w-50 mx-auto shadow">
+			<input id="input-field" type="text" class="form-control" placeholder="Type to search..."
+				aria-label="Product search input field" aria-describedby="button-addon2">
+			<button onclick="loadProducts()" class="btn bg-secondary btn-outline-secondary text-white" type="button"
+				id="search-btn">Search</button>
+		</div>
+	</header>
+	<main class="main">
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div id="product-details" class="card">
-            
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-9 col-lg-9 col-sm-7">
-        <div id="all-products" class="">
-          
-        </div>
-      </div>
-      <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
-        <div class="cart shadow rounded" id="my-cart">
-          <table class="table">
-            <thead>
-              <h1>My-Cart</h1>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>Total Added-Products:</th>
-                <td> <span id="total-Products">0</span></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Price:</th>
-                <td>$ <span id="price">0</span></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Delivery-Charge:</th>
-                <td>$ <span id="delivery-charge">20</span></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Total-Tax:</th>
-                <td>$ <span id="total-tax">0</span></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">Total</th>
-                <td colspan="2">$ <span id="total">0</span></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <footer></footer>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div id="product-details" class="card">
 
-  <!-- add javascript  file  -->
-  <script src="./js/app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-9 col-lg-9 col-sm-7">
+				<div id="all-products" class="">
+
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 col-sm-5 cart-main">
+				<div class="cart shadow rounded" id="my-cart">
+					<table class="table">
+						<thead>
+							<h1>My-Cart</h1>
+							<tr>
+								<th scope="col"></th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Total Added-Products:</th>
+								<td> <span id="total-Products">0</span></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>Price:</th>
+								<td>$ <span id="price">0</span></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>Delivery-Charge:</th>
+								<td>$ <span id="delivery-charge">20</span></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>Total-Tax:</th>
+								<td>$ <span id="total-tax">0</span></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">Total</th>
+								<td colspan="2">$ <span id="total">0</span></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="parces text-center">
+						<button class="btn btn-primary text-center">Buy Now</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer></footer>
+
+	<!-- add javascript  file  -->
+	<script src="./js/app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
