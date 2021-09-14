@@ -15,7 +15,7 @@ const showProducts = (products) => {
 		const div = document.createElement("div");
 		div.classList.add("product");
 		div.innerHTML = `
-		<div class="card border rounded-3 border-secondary single-product">
+		<div class="card  rounded-3 single-product">
 			<div>
 				<img class="product-image" src=${image}></img>
 			</div>
@@ -25,12 +25,12 @@ const showProducts = (products) => {
 			</div>
 		
 			<div class="card-footer border-top-0 bg-white">
+			<h5 class="my-3">Price: $${product.price}</h5>
 				<p class="text-muted">Category: ${product.category}</p>
 				<small class="text-muted pe-3">Reviews: ${product.rating.count}</small>
 				<small class="text-muted">Rating: ${product.rating.rate}</small>
-				<h5>Price: $${product.price}</h5>
-				<button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success mt-3">add to cart</button>
-				<button onclick="getProductDetails(${product.id})" id="details-btn" class="btn btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+				<button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="shadow btn btn-success mt-3">Add to cart</button>
+				<button onclick="getProductDetails(${product.id})" id="details-btn" class="shadow btn btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
 			</div>
 		</div>
       `;
