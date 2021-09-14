@@ -32,14 +32,17 @@ body {
 }
 
 /* product cart styles */
+.cart-main {
+  padding-right: 30px;
+}
 .cart {
   width: 350px;
   padding: 10px;
   margin-right: 30px;
   position: fixed;
 }
-.cart-main {
-  padding-right: 30px;
+tbody, td, th, thead, tr {
+    border: none;
 }
 
 /* styles for medium screen devices */
